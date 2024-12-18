@@ -1,6 +1,6 @@
 import Home from "./components/Home";
 import  { useRef, useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
 import Footer from "./components/Footer";
@@ -23,7 +23,7 @@ function App() {
  
 
   return (
-    <Router basename="/personal_portfolio">
+    <Router>
       <div className="App">
         <NavBar />
 
