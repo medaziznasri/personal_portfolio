@@ -23,10 +23,10 @@ function App() {
  
 
   return (
-    <Router>
+    <Router basename="/personal_portfolio">
       <div className="App">
         <NavBar />
-    
+
         <ParticlesComponent id="particles" />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -34,18 +34,18 @@ function App() {
             path="/about"
             element={
               <div
-              ref={homeRef}
-              className={`home-content ${showContent ? "show" : ""}`}
+                ref={homeRef}
+                className={`home-content ${showContent ? "show" : ""}`}
               >
                 <About />
               </div>
             }
             id="Homes"
-            />
+          />
           <Route path="/skills" element={<Skills />} />
         </Routes>
-            <Footer ></Footer>
-            </div>
+        <Footer></Footer>
+      </div>
     </Router>
   );
 }
