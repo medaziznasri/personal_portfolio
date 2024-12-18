@@ -1,5 +1,6 @@
 {
   "name": "personal_portfolio",
+  "homepage": "https://medaziznasri.github.io/personal_portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -28,8 +29,8 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "gh-pages": "^5.0.0",
     "globals": "^15.12.0",
-    "vite": "^6.0.1",
-    "gh-pages": "^5.0.0"
+    "vite": "^6.0.1"
   }
 }
