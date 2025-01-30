@@ -1,5 +1,5 @@
 import { useState, useEffect ,useRef } from "react";
-import logo from "../assets/414480092_1087482118936514_4680294006398497227_n.jpg";
+import logo from "../assets/470460950_1308517460166311_4125634053438536026_n.jpg";
 import { FaLinkedin } from "react-icons/fa";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { FaSun } from "react-icons/fa";
@@ -78,90 +78,78 @@ useEffect(() => {
           <img src={logo} alt="Logo" />
         </div>
       </Link>
+      <div className="links-cont">
+        <div className="links">
+          <ul>
+            <li onClick={() => navigate("/")}>
+              <a className={activeSection === "home" ? "active" : ""}>Home</a>
+            </li>
+            <li onClick={() => navigate("/about")}>
+              <a className={activeSection === "about" ? "active" : ""}>About</a>
+            </li>
+            <li onClick={() => navigate("/skills")}>
+              <a className={activeSection === "skills" ? "active" : ""}>
+                Skills
+              </a>
+            </li>
+            <li onClick={() => navigate("/projects")}>
+              <a className={activeSection === "projects" ? "active" : ""}>
+                Projects
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <div className="links">
-        <ul>
-          <li onClick={() => navigate("/")}>
-            <a className={activeSection === "home" ? "active" : ""}>Home</a>
-          </li>
-          <li onClick={() => navigate("/about")}>
-            <a className={activeSection === "about" ? "active" : ""}>About</a>
-          </li>
-          <li onClick={() => navigate("/skills")}>
-            <a className={activeSection === "skills" ? "active" : ""}>Skills</a>
-          </li>
-          <li onClick={() => navigate("/contact-us")}>
-            <a className={activeSection === "contact-us" ? "active" : ""}>
-              Articles
-            </a>
-          </li>
-          <li onClick={() => navigate("/projects")}>
-            <a className={activeSection === "projects" ? "active" : ""}>
-              Projects
-            </a>
-          </li>
-          <li onClick={() => navigate("/contributes")}>
-            <a className={activeSection === "contributes" ? "active" : ""}>
-              Contributes
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="menu-container" ref={menuRef}>
-        <button
-          className="menu-button"
-          type="button"
-          aria-expanded={isOpen}
-          aria-controls="menu-panel"
-          onClick={toggleMenu}
-        >
-          Menu
-          <svg
-            viewBox="0 0 8 6"
-            aria-hidden="true"
-            className={`menu-button-icon ${isOpen ? "rotate-180" : ""}`}
+        <div className="menu-container" ref={menuRef}>
+          <button
+            className="menu-button"
+            type="button"
+            aria-expanded={isOpen}
+            aria-controls="menu-panel"
+            onClick={toggleMenu}
           >
-            <path
-              d="M1.75 1.75 4 4.25l2.25-2.5"
-              fill="none"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-          </svg>
-        </button>
-        {isOpen && (
-          <div className="menu-panel" id="menu-panel">
-            <ul>
-              <li onClick={() => navigate("/")}>
-                <a onClick={handleMenuOptionClick}>Home</a>
-              </li>
-              <li onClick={() => navigate("/about")}>
-                <a onClick={handleMenuOptionClick}>About</a>
-              </li>
-              <li onClick={() => navigate("/skills")}>
-                <a onClick={handleMenuOptionClick}>Skills</a>
-              </li>
-              <li onClick={() => navigate("/contact-us")}>
-                <a onClick={handleMenuOptionClick}>Articles</a>
-              </li>
-              <li onClick={() => navigate("/projects")}>
-                <a onClick={handleMenuOptionClick}>Projects</a>
-              </li>
-              <li onClick={() => navigate("/contributes")}>
-                <a onClick={handleMenuOptionClick}>Contributes</a>
-              </li>
-            </ul>
-          </div>
-        )}
-        <div className="paths">
-          <FaLinkedin className="linkedin-icon" onClick={LinkedIn} />
-          {isDarkMode ? (
-            <BsMoonStarsFill className="darkmode" onClick={toggleDarkMode} />
-          ) : (
-            <FaSun className="lightmode" onClick={toggleDarkMode} />
+            Menu
+            <svg
+              viewBox="0 0 8 6"
+              aria-hidden="true"
+              className={`menu-button-icon ${isOpen ? "rotate-180" : ""}`}
+            >
+              <path
+                d="M1.75 1.75 4 4.25l2.25-2.5"
+                fill="none"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></path>
+            </svg>
+          </button>
+          {isOpen && (
+            <div className="menu-panel" id="menu-panel">
+              <ul>
+                <li onClick={() => navigate("/")}>
+                  <a onClick={handleMenuOptionClick}>Home</a>
+                </li>
+                <li onClick={() => navigate("/about")}>
+                  <a onClick={handleMenuOptionClick}>About</a>
+                </li>
+                <li onClick={() => navigate("/skills")}>
+                  <a onClick={handleMenuOptionClick}>Skills</a>
+                </li>
+
+                <li onClick={() => navigate("/projects")}>
+                  <a onClick={handleMenuOptionClick}>Projects</a>
+                </li>
+              </ul>
+            </div>
           )}
+          <div className="paths">
+            <FaLinkedin className="linkedin-icon" onClick={LinkedIn} />
+            {isDarkMode ? (
+              <BsMoonStarsFill className="darkmode" onClick={toggleDarkMode} />
+            ) : (
+              <FaSun className="lightmode" onClick={toggleDarkMode} />
+            )}
+          </div>
         </div>
       </div>
 

@@ -6,6 +6,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import ParticlesComponent from "./components/particles";
 import Skills from "./components/Skills";
+import Project from "./components/Project";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <Router>
+    
       <div className="App">
         <NavBar />
 
@@ -43,6 +45,7 @@ function App() {
             id="Homes"
           />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Project />} />
         </Routes>
         <Footer></Footer>
       </div>

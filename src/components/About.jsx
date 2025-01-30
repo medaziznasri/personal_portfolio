@@ -1,4 +1,4 @@
-import image from "../assets/mypic.jpg";
+import image from "../assets/470460950_1308517460166311_4125634053438536026_n.jpg";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
