@@ -42,13 +42,7 @@ const ParticlesComponent = ({ isDarkMode }) => {
         color: {
           value: isDarkMode ? "#ffffff" : "#000000",
         },
-        links: {
-          color: isDarkMode ? "#ffffff" : "#000000",
-          distance: 150,
-          enable: true,
-          opacity: 0.3,
-          width: 1,
-        },
+       
         move: {
           direction: "none",
           enable: true,
