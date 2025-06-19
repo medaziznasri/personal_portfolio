@@ -3,11 +3,10 @@ import logo from "../assets/470460950_1308517460166311_4125634053438536026_n.jpg
 import { FaLinkedin } from "react-icons/fa";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { FaSun } from "react-icons/fa";
-import ParticlesComponent from "./particles";
 import { useNavigate ,useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ onDarkModeChange }) {
 const [isOpen, setIsOpen] = useState(false);
 const menuRef = useRef(null);
 
@@ -39,20 +38,36 @@ useEffect(() => {
 
   const navigate = useNavigate();
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    if (onDarkModeChange) {
+      onDarkModeChange(newMode);
+    }
   };
-
+  // Effect to apply appropriate class when dark mode changes
   useEffect(() => {
     if (isDarkMode) {
       document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
     } else {
       document.body.classList.remove("dark-mode");
       document.body.classList.add("light-mode");
     }
   }, [isDarkMode]);
+
+  // Effect to initialize dark mode on first render
+  useEffect(() => {
+    // Set initial dark mode
+    document.body.classList.add("dark-mode");
+    document.body.classList.remove("light-mode");
+    
+    // Notify parent component about initial dark mode state
+    if (onDarkModeChange) {
+      onDarkModeChange(true);
+    }
+  }, []);
 
   const LinkedIn = () => {
     window.open("https://www.linkedin.com/in/med-aziz-nasri/", "_blank");
@@ -91,10 +106,14 @@ useEffect(() => {
               <a className={activeSection === "skills" ? "active" : ""}>
                 Skills
               </a>
-            </li>
-            <li onClick={() => navigate("/projects")}>
+            </li>            <li onClick={() => navigate("/projects")}>
               <a className={activeSection === "projects" ? "active" : ""}>
                 Projects
+              </a>
+            </li>
+            <li onClick={() => navigate("/blog")}>
+              <a className={activeSection === "blog" ? "active" : ""}>
+                Blog
               </a>
             </li>
           </ul>
@@ -134,10 +153,11 @@ useEffect(() => {
                 </li>
                 <li onClick={() => navigate("/skills")}>
                   <a onClick={handleMenuOptionClick}>Skills</a>
-                </li>
-
-                <li onClick={() => navigate("/projects")}>
+                </li>                <li onClick={() => navigate("/projects")}>
                   <a onClick={handleMenuOptionClick}>Projects</a>
+                </li>
+                <li onClick={() => navigate("/blog")}>
+                  <a onClick={handleMenuOptionClick}>Blog</a>
                 </li>
               </ul>
             </div>
@@ -148,12 +168,9 @@ useEffect(() => {
               <BsMoonStarsFill className="darkmode" onClick={toggleDarkMode} />
             ) : (
               <FaSun className="lightmode" onClick={toggleDarkMode} />
-            )}
-          </div>
+            )}          </div>
         </div>
       </div>
-
-      <ParticlesComponent isDarkMode={isDarkMode} />
     </div>
   );
 }
