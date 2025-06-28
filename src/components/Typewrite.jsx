@@ -19,7 +19,7 @@ function Typewrite() {
         </span>{" "}
         <span>
           <Typewriter
-            words={["a Full Stack Developer", "a Front-end Developer", "a Problem Solver"]}
+            words={["a Full Stack Developer"]}
             loop={0}
             cursor
             cursorStyle="_"
