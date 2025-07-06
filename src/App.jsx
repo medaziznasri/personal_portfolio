@@ -8,6 +8,8 @@ import ParticlesComponent from "./components/particles";
 import Skills from "./components/Skills";
 import Project from "./components/Project";
 import Blog from "./components/Blog";
+import Contact from "./components/Contact";
+import "./components/Contact.css";
 
 function App() {
 
@@ -56,6 +58,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Project />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer/>
       </div>

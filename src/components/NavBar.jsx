@@ -116,6 +116,11 @@ useEffect(() => {
                 Blog
               </a>
             </li>
+            <li onClick={() => navigate("/contact")}>
+              <a className={activeSection === "contact" ? "active" : ""}>
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -158,6 +163,9 @@ useEffect(() => {
                 </li>
                 <li onClick={() => navigate("/blog")}>
                   <a onClick={handleMenuOptionClick}>Blog</a>
+                </li>
+                <li onClick={() => navigate("/contact")}>
+                  <a onClick={handleMenuOptionClick}>Contact</a>
                 </li>
               </ul>
             </div>
