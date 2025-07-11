@@ -276,7 +276,7 @@ const Contact = () => {
                   <FiMail className="method-icon" />
                   <div>
                     <span className="method-label">Email</span>
-                    <span className="method-value">medaziznasri@email.com</span>
+                    <span className="method-value">aziznasri11082003@email.com</span>
                   </div>
                 </motion.div>
 
